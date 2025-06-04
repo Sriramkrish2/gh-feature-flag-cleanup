@@ -16,18 +16,16 @@ fi
 
 REPO="$1"
 FLAG="$2"
-REPO_DIR=""
 
 # Clone the repository to a temp directory
 TMP_DIR=$(mktemp -d)
 echo "Cloning repository $REPO into $TMP_DIR..."
 gh repo clone "$REPO" "$TMP_DIR"
 cd "$TMP_DIR"
-REPO_DIR="$TMP_DIR"
 
 # Open the repo in a new VS Code window
 if command -v code >/dev/null 2>&1; then
-  code -n "$REPO_DIR"
+  code -n .
 else
   echo "VS Code (code) not found in PATH. Please install VS Code CLI."
 fi
@@ -68,7 +66,7 @@ while true; do
   if [ "$IDX" -ge 0 ] && [ "$IDX" -lt "${#FILES[@]}" ]; then
     FILE="${FILES[$IDX]}"
     echo "Cleaning $FILE using AI agent..."
-    python3 "$GH_EXTENSION_DIR/cleanup_agent.py" "$FILE" "$FLAG"
+    python3 "$(dirname "$0")/cleanup_agent.py" "$FILE" "$FLAG"
     git add "$FILE"
     MODIFIED+=("$FILE")
     echo "$FILE cleaned and staged."
@@ -87,4 +85,4 @@ git commit -m "chore: remove feature flag $FLAG"
 git push -u origin "$BRANCH"
 gh pr create --title "Remove feature flag $FLAG" --body "Automated cleanup of feature flag: $FLAG"
 
-echo "Pull request created. You can continue working in VS Code: $REPO_DIR"
+echo "Pull request created. You can continue working in VS Code."
