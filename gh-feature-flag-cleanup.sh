@@ -4,30 +4,22 @@ set -e
 
 # Usage info
 usage() {
-  echo "Usage: gh feature-flag-cleanup <repository> <feature-flag>"
-  echo "Example: gh feature-flag-cleanup octocat/hello-world OLD_FEATURE_FLAG"
+  echo "Usage: gh feature-flag-cleanup <feature-flag>"
+  echo "Example: gh feature-flag-cleanup OLD_FEATURE_FLAG"
   exit 1
 }
 
 # Input validation
-if [ $# -ne 2 ]; then
+if [ $# -ne 1 ]; then
   usage
 fi
 
-REPO="$1"
-FLAG="$2"
+FLAG="$1"
 
-# Clone the repository to a temp directory
-TMP_DIR=$(mktemp -d)
-echo "Cloning repository $REPO into $TMP_DIR..."
-gh repo clone "$REPO" "$TMP_DIR"
-cd "$TMP_DIR"
-
-# Open the repo in a new VS Code window
-if command -v code >/dev/null 2>&1; then
-  code -n .
-else
-  echo "VS Code (code) not found in PATH. Please install VS Code CLI."
+# Ensure we're inside a git repository
+if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+  echo "Error: This command must be run inside a git repository."
+  exit 1
 fi
 
 # Create a new branch for the cleanup
@@ -85,4 +77,4 @@ git commit -m "chore: remove feature flag $FLAG"
 git push -u origin "$BRANCH"
 gh pr create --title "Remove feature flag $FLAG" --body "Automated cleanup of feature flag: $FLAG"
 
-echo "Pull request created. You can continue working in VS Code."
+echo "Pull request created."
