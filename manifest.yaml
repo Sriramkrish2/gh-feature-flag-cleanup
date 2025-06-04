@@ -1,5 +1,4 @@
 name: feature-flag-cleanup
-description: Clean up unused or expired feature flags in any codebase via the GitHub CLI.
-usage: gh feature-flag-cleanup <repository> <feature-flag>
+description: Clean up unused or expired feature flags in the current repository via the GitHub CLI.
+usage: gh feature-flag-cleanup <feature-flag>
 command: ./gh-feature-flag-cleanup
-
