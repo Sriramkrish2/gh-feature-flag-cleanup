@@ -1,4 +1,4 @@
 name: feature-flag-cleanup
 description: Clean up unused/expired feature flags in any codebase.
 usage: gh feature-flag-cleanup <feature-flag-name>
-command: ./feature-flag-cleanup.sh
+command: ./gh-feature-flag-cleanup.sh
