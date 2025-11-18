@@ -1,0 +1,15 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: flag
+
+flag: fm-test-flag1
+flagType: boolean
+description: ""
+labels:
+  - very loooooooooooooooooooooooooooooong
+
+availableValues:
+  - "true"
+  - "false"
+
+isPermanent: false

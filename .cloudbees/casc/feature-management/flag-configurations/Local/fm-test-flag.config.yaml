@@ -1,0 +1,30 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: flag-configuration
+
+flag: fm-test-flag
+
+enabled: true
+
+stickinessProperty: rox.distinct_id
+
+defaultValue:
+  valueWrittenInCode: true
+
+conditions:
+  - allOf:
+      - property:
+          name: Test-number-property
+          operator: ne
+          operands:
+            - 0
+    flagValue:
+      valueWrittenInCode: true
+  - allOf:
+      - property:
+          name: Test-number-property
+          operator: eq
+          operands:
+            - 1
+    flagValue:
+      valueWrittenInCode: true

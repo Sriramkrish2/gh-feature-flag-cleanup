@@ -1,0 +1,12 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: flag
+
+flag: fm-test-flag
+flagType: number
+description: ""
+labels:
+
+availableValues:
+
+isPermanent: false

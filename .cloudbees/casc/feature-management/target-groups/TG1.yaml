@@ -1,0 +1,15 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: target-group
+
+name: TG1
+
+description: 
+
+conditions:
+  allOf:
+    - property:
+        name: Test-number-property
+        operator: ne
+        operands:
+            - "1"
