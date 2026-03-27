@@ -1,0 +1,15 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: target-group
+
+name: TG-3
+
+description: With number property
+
+conditions:
+  allOf:
+    - property:
+        name: number-property
+        operator: eq
+        operands:
+            - "3"

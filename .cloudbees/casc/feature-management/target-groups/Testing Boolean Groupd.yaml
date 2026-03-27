@@ -1,0 +1,16 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: target-group
+
+name: Testing Boolean Groupd
+
+description: 
+
+conditions:
+  allOf:
+    - property:
+        name: Test-boolean-property
+        operator: is-true
+    - anyOf:
+        - group:
+            id: a4979e21-fc8b-4723-b84c-717b6b5cad36

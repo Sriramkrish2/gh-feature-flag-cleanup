@@ -1,0 +1,36 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: flag-configuration
+
+flag: Flag-1
+
+enabled: false
+
+stickinessProperty: rox.distinct_id
+
+defaultValue:
+  valueWrittenInCode: true
+
+conditions:
+  - allOf:
+      - property:
+          name: string-property
+          operator: in-array
+          operands:
+            - "1"
+    flagValue: false
+  - allOf:
+      - property:
+          name: Test-boolean-property
+          operator: is-false
+    flagValue: false
+  - allOf:
+      - flag:
+          name: Flag-2
+          value: "true"
+    flagValue: false
+  - allOf:
+      - anyOf:
+          - group:
+              name: Testing Boolean Groupd
+    flagValue: false

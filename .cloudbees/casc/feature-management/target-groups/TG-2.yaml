@@ -1,0 +1,15 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: target-group
+
+name: TG-2
+
+description: With string property
+
+conditions:
+  allOf:
+    - property:
+        name: string-property
+        operator: in-array
+        operands:
+            - One
