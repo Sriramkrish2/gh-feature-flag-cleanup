@@ -2,14 +2,14 @@
 apiVersion: featuremanagement.cloudbees.io/v1alpha1
 kind: target-group
 
-name: TG-2
+name: TG4
 
-description: With string property
+description: 
 
 conditions:
   allOf:
     - property:
-        name: string-property
-        operator: in-array
+        name: internal.api_version
+        operator: semver-eq
         operands:
-            - One
+            - "1"

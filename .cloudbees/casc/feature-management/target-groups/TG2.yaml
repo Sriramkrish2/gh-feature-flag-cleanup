@@ -1,0 +1,13 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: target-group
+
+name: TG2
+
+description: 
+
+conditions:
+  allOf:
+    - allOf:
+        - group:
+            name: TG1

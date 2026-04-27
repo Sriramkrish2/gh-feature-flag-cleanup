@@ -2,6 +2,6 @@
 apiVersion: featuremanagement.cloudbees.io/v1alpha1
 kind: flag-properties
 
-name: date property
-type: Datetime
+name: rox.internal.realPlatform
+type: String
 description: ""

@@ -1,0 +1,13 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: flag-configuration
+
+flag: Message
+
+enabled: false
+
+stickinessProperty: rox.distinct_id
+
+defaultValue: sample message
+
+conditions: []

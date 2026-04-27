@@ -1,0 +1,16 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: flag
+
+flag: FontColor
+flagType: string
+description: ""
+labels:
+
+availableValues:
+  - Red
+  - Green
+  - Blue
+  - Black
+
+isPermanent: false

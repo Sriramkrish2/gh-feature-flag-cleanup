@@ -2,6 +2,6 @@
 apiVersion: featuremanagement.cloudbees.io/v1alpha1
 kind: flag-properties
 
-name: number-property
-type: Number
+name: prop1
+type: Boolean
 description: ""

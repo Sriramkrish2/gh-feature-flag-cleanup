@@ -2,13 +2,14 @@
 apiVersion: featuremanagement.cloudbees.io/v1alpha1
 kind: flag
 
-flag: Flag-3
-flagType: boolean
+flag: FontSize
+flagType: number
 description: ""
 labels:
 
 availableValues:
-  - "true"
-  - "false"
+  - "12"
+  - "16"
+  - "24"
 
 isPermanent: false
