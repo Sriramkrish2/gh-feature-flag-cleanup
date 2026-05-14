@@ -10,5 +10,6 @@ labels:
 availableValues:
   - This is the default message; try changing some flag values!
   - sample message
+  - Test
 
 isPermanent: false
