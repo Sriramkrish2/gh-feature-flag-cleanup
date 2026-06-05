@@ -1,0 +1,14 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: flag
+
+flag: AI boolean
+flagType: boolean
+description: created using unify assistant
+labels:
+
+availableValues:
+  - "true"
+  - "false"
+
+isPermanent: false
