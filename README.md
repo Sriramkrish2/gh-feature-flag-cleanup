@@ -5,4 +5,3 @@ A GitHub CLI extension to clean up unused or expired feature flags in any codeba
 ## Installation
 
 Clone this repo and install as a GitHub CLI extension:
-
