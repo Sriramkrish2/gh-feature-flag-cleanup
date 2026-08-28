@@ -12,4 +12,4 @@ availableValues:
   - "16"
   - "24"
 
-isPermanent: false
+isPermanent: true
