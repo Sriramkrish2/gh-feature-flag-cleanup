@@ -4,7 +4,7 @@ kind: flag
 
 flag: FontSize
 flagType: number
-description: ""
+description: test
 labels:
 
 availableValues:
