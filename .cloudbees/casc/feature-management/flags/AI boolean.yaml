@@ -4,7 +4,7 @@ kind: flag
 
 flag: AI boolean
 flagType: boolean
-description: created using unify assistants
+description: created using unify assistant
 labels:
 
 availableValues:
