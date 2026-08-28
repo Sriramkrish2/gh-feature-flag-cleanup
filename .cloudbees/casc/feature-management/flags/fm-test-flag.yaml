@@ -4,7 +4,7 @@ kind: flag
 
 flag: fm-test-flag
 flagType: boolean
-description: test Description
+description: ""
 labels:
 
 availableValues:
