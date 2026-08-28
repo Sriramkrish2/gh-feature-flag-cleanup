@@ -13,4 +13,4 @@ availableValues:
   - Blue
   - Black
 
-isPermanent: false
+isPermanent: true
