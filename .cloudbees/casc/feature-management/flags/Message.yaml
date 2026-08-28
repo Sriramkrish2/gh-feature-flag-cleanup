@@ -12,4 +12,4 @@ availableValues:
   - sample message
   - Test
 
-isPermanent: false
+isPermanent: true
