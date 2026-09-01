@@ -1,4 +1,4 @@
-# gh-feature-flag-cleanup
+# gh-feature-flag-cleanup new
 
 A GitHub CLI extension to clean up unused or expired feature flags in any codebase.
 
